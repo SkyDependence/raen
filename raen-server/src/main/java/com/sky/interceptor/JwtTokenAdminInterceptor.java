@@ -33,6 +33,8 @@ public class JwtTokenAdminInterceptor implements HandlerInterceptor {
      * @throws Exception
      */
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        // TODO 前端JWT
+
         // 假设jwt没过期
         return true;
         /* System.out.println("当前线程的id:" + Thread.currentThread().getId());
