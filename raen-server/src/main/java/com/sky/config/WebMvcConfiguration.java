@@ -1,7 +1,6 @@
 package com.sky.config;
 
 import com.sky.interceptor.JwtTokenAdminInterceptor;
-import com.sky.interceptor.JwtTokenUserInterceptor;
 import com.sky.json.JacksonObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +30,6 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     @Autowired
     private JwtTokenAdminInterceptor jwtTokenAdminInterceptor;
 
-    @Autowired
-    private JwtTokenUserInterceptor jwtTokenUserInterceptor;
-
     /**
      * 注册自定义拦截器
      *
@@ -44,10 +40,6 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
         registry.addInterceptor(jwtTokenAdminInterceptor)
                 .addPathPatterns("/admin/**")
                 .excludePathPatterns("/admin/employee/login");
-        registry.addInterceptor(jwtTokenUserInterceptor)
-                .addPathPatterns("/user/**")
-                .excludePathPatterns("/user/user/login")
-                .excludePathPatterns("/user/shop/status");
     }
 
     /**
@@ -58,9 +50,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     public Docket docket1() {
         log.info("准备生成接口文档");
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("苍穹外卖项目接口文档")
+                .title("raen项目接口文档")
                 .version("2.0")
-                .description("苍穹外卖项目接口文档")
+                .description("raen项目接口文档")
                 .build();
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .groupName("管理端接口")
@@ -80,9 +72,9 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
     public Docket docket2() {
         log.info("准备生成接口文档");
         ApiInfo apiInfo = new ApiInfoBuilder()
-                .title("苍穹外卖项目接口文档")
+                .title("raen项目接口文档")
                 .version("2.0")
-                .description("苍穹外卖项目接口文档")
+                .description("raen项目接口文档")
                 .build();
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .groupName("用户端接口")

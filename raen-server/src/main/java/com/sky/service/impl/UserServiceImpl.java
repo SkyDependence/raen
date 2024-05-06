@@ -88,9 +88,6 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         BeanUtils.copyProperties(userDTO, user);
 
-        // employee.setUpdateTime(LocalDateTime.now());
-        // employee.setUpdateUser(BaseContext.getCurrentId());
-
         userMapper.update(user);
     }
 }

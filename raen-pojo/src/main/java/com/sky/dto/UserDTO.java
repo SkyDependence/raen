@@ -7,10 +7,20 @@ import java.io.Serializable;
 @Data
 public class UserDTO implements Serializable {
 
-    private Long id;
-
     private String username;
 
     private String password;
+
+    private String name;
+
+    private Long articles;
+
+    private String avatar;
+
+    private Long practices;
+
+    private String sex;
+
+    private String phoneNumber;
 
 }

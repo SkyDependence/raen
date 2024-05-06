@@ -28,13 +28,13 @@ public interface UserMapper {
      * 插入用户数据
      * @param user
      */
-    @Insert("insert into user (username, password)" +
-            "values " + "(#{username},#{password})")
+    @Insert("insert into user (username, password, name)" +
+            "values " + "(#{username},#{password},#{name})")
     void insert(User user);
 
 
     /**
-     * 根据主键修改属性
+     * 根据username修改属性
      * @param user
      */
     void update(User user);
